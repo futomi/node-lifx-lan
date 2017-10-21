@@ -564,25 +564,25 @@ Property      | Type    | Description
 `ip`          | String  | IP address. (e.g., `"192.168.10.4"`)
 `mac`         | String  | MAC address. (e.g., `"D0:73:D5:25:36:B0"`)
 `deviceInfo`  | Object  |
-+ `label`     | String  | Label of the bulb.
-+ `vendorId`  | Integer | [Vendor ID](https://lan.developer.lifx.com/v2.0/docs/lifx-products). The value is always `1`.
-+ `productId` | Integer  | [Product ID](https://lan.developer.lifx.com/v2.0/docs/lifx-products). The value depends on the product.
-+ `productName` | String | Product name. The value depends on the product.
-+ `hwVersion`   | Integer | Hardware version number.
-+ `features`    | Object  |
-++ `color`      | Boolean | The bulb has color capability, the value is `true`. Otherwise, `false`.
-++ `infrared`   | Boolean | The bulb has infrared capability, the value is `true`. Otherwise, `false`.
-++ `multizone`  | Boolean | The bulb has multizone capability, the value is `true`. Otherwise, `false`.
-+ `location`    | Object  |
-++ `guid`       | String  | GUID of location.
-++ `label`      | String  | Label of location.
-++ `updated`    | `Date`  | A JavaScript `Date` object representing the date and time when the location was updated.
-+ `group`       | Object  |
-++ `guid`       | String  | GUID of group.
-++ `label`      | String  | Label of group.
-++ `updated`    | `Date`  | A JavaScript `Date` object representing the date and time when the group was updated.
-+ `multizone`   | Object  | If the bulb does not have multizone capability, the value is `null`.
-++ `count`      | Integer | Number of zone.
++`label`     | String  | Label of the bulb.
++`vendorId`  | Integer | [Vendor ID](https://lan.developer.lifx.com/v2.0/docs/lifx-products). The value is always `1`.
++`productId` | Integer  | [Product ID](https://lan.developer.lifx.com/v2.0/docs/lifx-products). The value depends on the product.
++`productName` | String | Product name. The value depends on the product.
++`hwVersion`   | Integer | Hardware version number.
++`features`    | Object  |
+++`color`      | Boolean | The bulb has color capability, the value is `true`. Otherwise, `false`.
+++`infrared`   | Boolean | The bulb has infrared capability, the value is `true`. Otherwise, `false`.
+++`multizone`  | Boolean | The bulb has multizone capability, the value is `true`. Otherwise, `false`.
++`location`    | Object  |
+++`guid`       | String  | GUID of location.
+++`label`      | String  | Label of location.
+++`updated`    | `Date`  | A JavaScript `Date` object representing the date and time when the location was updated.
++`group`       | Object  |
+++`guid`       | String  | GUID of group.
+++`label`      | String  | Label of group.
+++`updated`    | `Date`  | A JavaScript `Date` object representing the date and time when the group was updated.
++`multizone`   | Object  | If the bulb does not have multizone capability, the value is `null`.
+++`count`      | Integer | Number of zone.
 
 The code below discovers LIFX bulbs, then shows the structure of the  `deviceInfo` of one of the found bulbs:
 
