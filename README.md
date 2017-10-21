@@ -783,21 +783,21 @@ If the information is fetched successfully, a hash object containing the informa
 Property       | Type    | Description
 :--------------|:--------|:-----------
 `color`        | Object  |
-+ `hue`        | Float   | Hue in the range of 0.0 to 1.0.
-+ `saturation` | Float   | Saturation in the range of 0.0 to 1.0.
-+ `brightness` | Float   | Brightness in the range of 0.0 to 1.0.
-+ `kelvin`     | Integer | Color temperature (°) in the range of 2500 to 9000.
++`hue`        | Float   | Hue in the range of 0.0 to 1.0.
++`saturation` | Float   | Saturation in the range of 0.0 to 1.0.
++`brightness` | Float   | Brightness in the range of 0.0 to 1.0.
++`kelvin`     | Integer | Color temperature (°) in the range of 2500 to 9000.
 `power`        | Integer | If the bulb is turned on, the value is `true`. Otherwise, the value is `false`.
 `label`        | String  | The label of the bulb.
 `infrared`     | Object  | If the bulb does not have infrared capability, the value is `null`.
-+ `brightness` | Float   | Infrared brightness in the range of 0.0 to 1.0.
++`brightness` | Float   | Infrared brightness in the range of 0.0 to 1.0.
 `multizone`    | Object  | If the bulb does not have multizone capability, the value is `null`.
-+ `count`      | Integer | Number of zone.
-+ `colors`     | Array   |
-++ `hue`       | Float   | Hue in the range of 0.0 to 1.0.
-++ `saturation`| Float   | Saturation in the range of 0.0 to 1.0.
-++ `brightness`| Float   | Brightness in the range of 0.0 to 1.0.
-++ `kelvin`    | Integer | Color temperature (°) in the range of 2500 to 9000.
++`count`      | Integer | Number of zone.
++`colors`     | Array   |
+++`hue`       | Float   | Hue in the range of 0.0 to 1.0.
+++`saturation`| Float   | Saturation in the range of 0.0 to 1.0.
+++`brightness`| Float   | Brightness in the range of 0.0 to 1.0.
+++`kelvin`    | Integer | Color temperature (°) in the range of 2500 to 9000.
 
 The code below shows the state of the LIFX bulb:
 
@@ -1130,9 +1130,9 @@ Property      | Type    | Description
 `productName` | String  | Product name.
 `hwVersion`   | Integer | Hardware version.
 `features`    | Object  |
-+ `color`     | Boolean | If the bulb has color capability, the value is `true`. Otherwise, the value is `false`.
-+ `infrared`  | Boolean | If the bulb has infrared capability, the value is `true`. Otherwise, the value is `false`.
-+ `multizone` | Boolean | If the bulb has multizone capability, the value is `true`. Otherwise, the value is `false`.
++`color`     | Boolean | If the bulb has color capability, the value is `true`. Otherwise, the value is `false`.
++`infrared`  | Boolean | If the bulb has infrared capability, the value is `true`. Otherwise, the value is `false`.
++`multizone` | Boolean | If the bulb has multizone capability, the value is `true`. Otherwise, the value is `false`.
 
 ```JavaScript
 Lifx.discover().then((device_list) => {
