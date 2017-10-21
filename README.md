@@ -29,7 +29,7 @@ $ npm install node-lifx-lan
   * [turnOnFilter() method](#LifxLan-turnOnFilter-method)
   * [setColorFilter() method](#LifxLan-setColorFilter-method)
   * [turnOffFilter() method](#LifxLan-turnOffFilter-method)
-  * [destroy() method](#LifxLan-deatroy-method)
+  * [destroy() method](#LifxLan-destroy-method)
 * [`LifxLanColor` object](#LifxLanColor-object)
   * [`LifxLanColorHSB` object](#LifxLanColorHSB-object)
   * [`LifxLanColorRGB` object](#LifxLanColorRGB-object)
