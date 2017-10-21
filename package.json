@@ -1,0 +1,32 @@
+{
+  "name": "node-lifx-lan",
+  "version": "0.0.1",
+  "description": "The node-lifx-lan is a Node.js module which allows you to communicate with the Wi-Fi LED smart light products \"LIFX\" using the LAN protocol.",
+  "main": "./lib/lifx-lan.js",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "LIFX",
+    "Smart Home",
+    "Home Automation",
+    "Smart Light",
+    "Smart Bulb"
+  ],
+  "homepage": "https://github.com/futomi",
+  "author": "Futomi Hatano <futomi.hatano@gmail.com> (https://github.com/futomi)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/futomi/node-lifx-lan.git"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+  }
+}
