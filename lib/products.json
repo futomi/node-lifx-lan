@@ -112,6 +112,15 @@
 				}
 			},
 			{
+				"pid": 32,
+				"name": "LIFX Z2",
+				"features": {
+					"color": true,
+					"infrared": false,
+					"multizone": true
+				}
+			},
+			{
 				"pid": 36,
 				"name": "LIFX Downlight",
 				"features": {
