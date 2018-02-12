@@ -1716,6 +1716,8 @@ The code above will output the result as follows:
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.0.2 (2018-02-12)
+  * Updated [`product.json`](https://github.com/futomi/node-lifx-lan/blob/master/lib/products.json) based on the latest [LIFX product ID list table](https://lan.developer.lifx.com/docs/lifx-products)
 * v0.0.1 (2017-10-22)
   * First public release
 
@@ -1731,7 +1733,7 @@ The code above will output the result as follows:
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Futomi Hatano
+Copyright (c) 2017 - 2018 Futomi Hatano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -173,6 +173,42 @@
 					"infrared": true,
 					"multizone": false
 				}
+			},
+			{
+				"pid": 49,
+				"name": "LIFX Mini",
+				"features": {
+					"color": true,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 50,
+				"name": "LIFX Mini Day and Dusk",
+				"features": {
+					"color": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 51,
+				"name": "LIFX Mini White",
+				"features": {
+					"color": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 52,
+				"name": "LIFX GU10",
+				"features": {
+					"color": true,
+					"infrared": false,
+					"multizone": false
+				}
 			}
 		]
 	}
