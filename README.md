@@ -506,15 +506,15 @@ Property      | Type    | Required | Description
 `label`       | String  | Optional | Label of bulb
 `productId`   | Integer | Optional | [Product ID](https://lan.developer.lifx.com/v2.0/docs/lifx-products)
 `features`    | Object  | Optional |
-+ `color`     | Boolean | Optional | If the bulb has [color capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
-+ `infrared`  | Boolean | Optional | If the bulb has [infrared capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
-+ `multizone` | Boolean | Optional | If the bulb has [multizone capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
++`color`     | Boolean | Optional | If the bulb has [color capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
++`infrared`  | Boolean | Optional | If the bulb has [infrared capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
++`multizone` | Boolean | Optional | If the bulb has [multizone capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
 `group`       | Object  | Optional |
-+ `guid`      | String  | Optional | GUID of group
-+ `label`     | String  | Optional | Label of group
++`guid`      | String  | Optional | GUID of group
++`label`     | String  | Optional | Label of group
 `location`    | Object  | Optional |
-+ `guid`      | String  | Optional | GUID of location
-+ `label`     | String  | Optional | Label of location
++`guid`      | String  | Optional | GUID of location
++`label`     | String  | Optional | Label of location
 
 As you can see the table above, all of the properties are optional. No `LifxLanFilter` means no filter. That is, all bulbs are targeted.
 
