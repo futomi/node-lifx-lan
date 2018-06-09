@@ -1716,6 +1716,8 @@ The code above will output the result as follows:
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.0.3 (2018-06-09)
+  * Supported Node.js v10. (Thanks to [@VanCoding](https://github.com/futomi/node-lifx-lan/pull/3))
 * v0.0.2 (2018-02-12)
   * Updated [`product.json`](https://github.com/futomi/node-lifx-lan/blob/master/lib/products.json) based on the latest [LIFX product ID list table](https://lan.developer.lifx.com/docs/lifx-products)
 * v0.0.1 (2017-10-22)
