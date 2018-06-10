@@ -30,6 +30,7 @@ $ npm install node-lifx-lan
   * [setColorFilter() method](#LifxLan-setColorFilter-method)
   * [turnOffFilter() method](#LifxLan-turnOffFilter-method)
   * [destroy() method](#LifxLan-destroy-method)
+  * [createDevice() method](#LifxLan-createDevice-method)
 * [`LifxLanColor` object](#LifxLanColor-object)
   * [`LifxLanColorHSB` object](#LifxLanColorHSB-object)
   * [`LifxLanColorRGB` object](#LifxLanColorRGB-object)
@@ -422,7 +423,7 @@ While the [`turnOffBroadcast()`](#LifxLan-turnOffBroadcast-method) method just s
 
 ### <a id="LifxLan-destroy-method">destroy() method</a>
 
-The `destroy()` method closes the UDP socket, then disables the `LifxLan` object. 
+The `destroy()` method closes the UDP socket, then disables the `LifxLan` object.
 
 Once the node-lifx-lan module is loaded, the script can not finish automatically because UDP socket keeps to be open. Calling this method, the script can finish as expected.
 
@@ -433,6 +434,38 @@ Lifx.destroy().then(() => {
   console.error();
 });
 ```
+
+### <a id="LifxLan-createDevice-method">createDevice(*params*) method</a>
+
+The `createDevice()` method creates a [`LifxLanDevice`](#LifxLanDevice-object) object.
+
+The [`LifxLanDevice`](#LifxLanDevice-object) object can be obtained using the [`discover()`](#LifxLan-discover-method) method as well. However, if you have already known the IPv4 address and the MAC address of the device, this method allows you to obtain the [`LifxLanDevice`](#LifxLanDevice-object) object without the discovery process.
+
+This method takes a hash object containing the properties as follows:
+
+Property   | Type   | Requred  | Description
+:----------|:-------|:---------|:-----------
+`ip`       | String | Required | IPv4 address. (e.g., `"192.168.10.4"`)
+`mac`      | String | Required | MAC address. (e.g., `"D0:73:D5:25:36:B0"`)
+
+The code below creates a [`LifxLanDevice`](#LifxLanDevice-object) object and turns on the LIFX bulb:
+
+```JavaScript
+Lifx.createDevice({
+  mac: 'D0:73:D5:25:36:B0',
+  ip: '192.168.11.32'
+}).then((dev) => {
+  return dev.turnOn({
+    color: { css: 'red' }
+  });
+}).then(() => {
+  console.log('Done!');
+}).catch((error) => {
+  console.error(error);
+});
+```
+
+Note that the [`deviceInfo`](#LifxLanDevice-properties) property in a [`LifxLanDevice`](#LifxLanDevice-object) object created by this method is set to `null` by default. If you want to get the device information, call the [`getDeviceInfo()`](#LifxLanDevice-getDeviceInfo-method) method by yourself.
 
 ---------------------------------------
 ## <a id="LifxLanColor-object">`LifxLanColor` object</a>
@@ -484,7 +517,7 @@ When the `LifxLanColorXyb` object is used for other methods, all properties are 
 
 Property | Type    | Required    | Description
 :--------|:--------|:------------|:-----------
-`css`    | String  | Conditional | CSS color (`"red"`, `"#ff0000"`, or `"rgb(255, 0, 0)"`) 
+`css`    | String  | Conditional | CSS color (`"red"`, `"#ff0000"`, or `"rgb(255, 0, 0)"`)
 `kelvin` | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
 
 The `css` property supports all of the named colors specified in the [W3C CSS Color Module Level 4](https://drafts.csswg.org/css-color/#named-colors), such as `"red"`, `"blue"`, `"blueviolet"`, etc.
@@ -506,15 +539,15 @@ Property      | Type    | Required | Description
 `label`       | String  | Optional | Label of bulb
 `productId`   | Integer | Optional | [Product ID](https://lan.developer.lifx.com/v2.0/docs/lifx-products)
 `features`    | Object  | Optional |
-+ `color`     | Boolean | Optional | If the bulb has [color capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
-+ `infrared`  | Boolean | Optional | If the bulb has [infrared capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
-+ `multizone` | Boolean | Optional | If the bulb has [multizone capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
++`color`     | Boolean | Optional | If the bulb has [color capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
++`infrared`  | Boolean | Optional | If the bulb has [infrared capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
++`multizone` | Boolean | Optional | If the bulb has [multizone capability](https://lan.developer.lifx.com/v2.0/docs/lifx-products), the value is `true`. Otherwise, `false`.
 `group`       | Object  | Optional |
-+ `guid`      | String  | Optional | GUID of group
-+ `label`     | String  | Optional | Label of group
++`guid`      | String  | Optional | GUID of group
++`label`     | String  | Optional | Label of group
 `location`    | Object  | Optional |
-+ `guid`      | String  | Optional | GUID of location
-+ `label`     | String  | Optional | Label of location
++`guid`      | String  | Optional | GUID of location
++`label`     | String  | Optional | Label of location
 
 As you can see the table above, all of the properties are optional. No `LifxLanFilter` means no filter. That is, all bulbs are targeted.
 
@@ -717,19 +750,19 @@ Property      | Type    | Description
 `productName` | String | Product name. The value depends on the product.
 `hwVersion`   | Integer | Hardware version number.
 `features`    | Object  |
-+ `color`     | Boolean | The bulb has color capability, the value is `true`. Otherwise, `false`.
-+ `infrared`  | Boolean | The bulb has infrared capability, the value is `true`. Otherwise, `false`.
-+ `multizone` | Boolean | The bulb has multizone capability, the value is `true`. Otherwise, `false`.
++`color`     | Boolean | The bulb has color capability, the value is `true`. Otherwise, `false`.
++`infrared`  | Boolean | The bulb has infrared capability, the value is `true`. Otherwise, `false`.
++`multizone` | Boolean | The bulb has multizone capability, the value is `true`. Otherwise, `false`.
 `location`    | Object  |
-+ `guid`      | String  | GUID of location.
-+ `label`     | String  | Label of location.
-+ `updated`   | `Date`  | A JavaScript `Date` object representing the date and time when the location was updated.
++`guid`      | String  | GUID of location.
++`label`     | String  | Label of location.
++`updated`   | `Date`  | A JavaScript `Date` object representing the date and time when the location was updated.
 `group`       | Object  |
-+ `guid`      | String  | GUID of group.
-+ `label`     | String  | Label of group.
-+ `updated`   | `Date`  | A JavaScript `Date` object representing the date and time when the group was updated.
++`guid`      | String  | GUID of group.
++`label`     | String  | Label of group.
++`updated`   | `Date`  | A JavaScript `Date` object representing the date and time when the group was updated.
 `multizone`   | Object  | If the bulb does not have multizone capability, the value is `null`.
-+ `count`     | Integer | Number of zone.
++`count`     | Integer | Number of zone.
 
 
 ```JavaScript
@@ -1321,7 +1354,7 @@ Property | Type   | Requred  | Description
 :--------|:-------|:---------|:-----------
 `text`   | String | Required | An arbitrary string (up to 64 bytes in UTF-8 encoding)
 
-Note that this method accepts only text though the LIFX LAN protocol specification says that you can send binary data, 
+Note that this method accepts only text though the LIFX LAN protocol specification says that you can send binary data,
 
 If this method send a request successfully, a hash object will be passed to the `resolve()` function. The hash object contains the properties as follows [[EchoResponse - 59](https://lan.developer.lifx.com/docs/device-messages#section-echoresponse-59)]:
 
@@ -1359,7 +1392,7 @@ If this method fetches the information successfully, a hash object will be passe
 
 Property | Type   | Description
 :--------|:-------|:-----------
-`color`  | [`LifxLanColorHSB`](#LifxLanColorHSB-object) | HSB color information. 
+`color`  | [`LifxLanColorHSB`](#LifxLanColorHSB-object) | HSB color information.
 `power`  | Integer | `0` (off) or `1` (on)
 `label`  | String  | Text label of the bulb.
 
@@ -1571,7 +1604,7 @@ Property   | Type    | Requred  | Description
 Lifx.discover().then((device_list) => {
   let dev = device_list[0];
   return dev.lightSetInfrared({
-    brightness: 1.0 
+    brightness: 1.0
   });
 }).then((res) => {
   console.log('Done!');
@@ -1668,7 +1701,7 @@ The code above will output the result as follows:
       "brightness": 1,
       "kelvin": 3500
     },
-    ... 
+    ...
   ]
 }
 ```
@@ -1681,7 +1714,7 @@ Property | Type    | Description
 :--------|:--------|:-----------
 `count`  | Integer | The count of the total number of zones available on the device
 `index`  | Integer | The index of `colors[0]`.
-`color`  | [`LifxLanColorHSB`](#LifxLanColorHSB-object) | HSB color information. 
+`color`  | [`LifxLanColorHSB`](#LifxLanColorHSB-object) | HSB color information.
 
 
 ```JavaScript
@@ -1689,7 +1722,7 @@ Lifx.discover().then((device_list) => {
   let dev = device_list[0];
   return dev.multiZoneGetColorZones({
     start : 3,
-    end   : 3 
+    end   : 3
   });
 }).then((res) => {
   console.log(JSON.stringify(res, null, '  '));
@@ -1716,6 +1749,10 @@ The code above will output the result as follows:
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.1.0 (2018-06-10)
+  * Newly added the [`createDevice()`](#LifxLan-createDevice-method) method. (Thanks to [@MarcGodard](https://github.com/futomi/node-lifx-lan/issues/4))
+* v0.0.3 (2018-06-09)
+  * Supported Node.js v10. (Thanks to [@VanCoding](https://github.com/futomi/node-lifx-lan/pull/3))
 * v0.0.2 (2018-02-12)
   * Updated [`product.json`](https://github.com/futomi/node-lifx-lan/blob/master/lib/products.json) based on the latest [LIFX product ID list table](https://lan.developer.lifx.com/docs/lifx-products)
 * v0.0.1 (2017-10-22)

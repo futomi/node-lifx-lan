@@ -1,6 +1,6 @@
 {
   "name": "node-lifx-lan",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "The node-lifx-lan is a Node.js module which allows you to communicate with the Wi-Fi LED smart light products \"LIFX\" using the LAN protocol.",
   "main": "./lib/lifx-lan.js",
   "files": [
