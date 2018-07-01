@@ -1749,6 +1749,8 @@ The code above will output the result as follows:
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.2.0 (2018-07-01)
+  * Supported multihomed host. Now, you can discover devices expectedly even if your host computer has multiple network interfaces because broadcast packets are sent to all available network interfaces.
 * v0.1.0 (2018-06-10)
   * Newly added the [`createDevice()`](#LifxLan-createDevice-method) method. (Thanks to [@MarcGodard](https://github.com/futomi/node-lifx-lan/issues/4))
 * v0.0.3 (2018-06-09)
