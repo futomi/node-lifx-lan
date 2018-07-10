@@ -9,7 +9,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -18,7 +19,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -27,7 +29,8 @@
 				"features": {
 					"color": false,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -36,7 +39,8 @@
 				"features": {
 					"color": false,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -45,7 +49,8 @@
 				"features": {
 					"color": false,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -54,7 +59,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -63,7 +69,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -72,7 +79,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -81,7 +89,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -90,7 +99,8 @@
 				"features": {
 					"color": true,
 					"infrared": true,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -99,7 +109,8 @@
 				"features": {
 					"color": true,
 					"infrared": true,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -108,16 +119,18 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": true
+					"multizone": true,
+					"chain": false
 				}
 			},
 			{
 				"pid": 32,
-				"name": "LIFX Z2",
+				"name": "LIFX Z 2",
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": true
+					"multizone": true,
+					"chain": false
 				}
 			},
 			{
@@ -126,7 +139,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -135,7 +149,18 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
+				}
+			},
+			{
+				"pid": 38,
+				"name": "LIFX Beam",
+				"features": {
+					"color": true,
+					"infrared": false,
+					"multizone": true,
+					"chain": false
 				}
 			},
 			{
@@ -144,7 +169,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -153,7 +179,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -162,7 +189,8 @@
 				"features": {
 					"color": true,
 					"infrared": true,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -171,7 +199,8 @@
 				"features": {
 					"color": true,
 					"infrared": true,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -180,7 +209,8 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -189,7 +219,8 @@
 				"features": {
 					"color": false,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -198,7 +229,8 @@
 				"features": {
 					"color": false,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
 				}
 			},
 			{
@@ -207,7 +239,48 @@
 				"features": {
 					"color": true,
 					"infrared": false,
-					"multizone": false
+					"multizone": false,
+					"chain": false
+				}
+			},
+			{
+				"pid": 55,
+				"name": "LIFX Tile",
+				"features": {
+					"color": true,
+					"infrared": false,
+					"multizone": false,
+					"chain": true
+				}
+			},
+			{
+				"pid": 59,
+				"name": "LIFX Mini Color",
+				"features": {
+					"color": true,
+					"infrared": false,
+					"multizone": false,
+					"chain": false
+				}
+			},
+			{
+				"pid": 60,
+				"name": "LIFX Mini Day and Dusk",
+				"features": {
+					"color": false,
+					"infrared": false,
+					"multizone": false,
+					"chain": false
+				}
+			},
+			{
+				"pid": 61,
+				"name": "LIFX Mini White",
+				"features": {
+					"color": false,
+					"infrared": false,
+					"multizone": false,
+					"chain": false
 				}
 			}
 		]
