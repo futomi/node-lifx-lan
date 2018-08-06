@@ -1750,7 +1750,7 @@ The code above will output the result as follows:
 ## <a id="Release-Note">Release Note</a>
 
 * v0.2.2 (2018-08-07)
-  * The [`multiZoneSetColorZones()`](#LifxLanDevice-multiZoneSetColorZones-method) method did not accept a [`LifxLanColor`](#LifxLanColor-object) object for the `color` parameter even though this document says the method does. The method accepted only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object. Now the method accepts a [`LifxLanColor`](#LifxLanColor-object) object for the parameter. That is, the method accepts not only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object but also a [`LifxLanColorRGB`](#LifxLanColorRGB-object), [`LifxLanColorXyb`](#LifxLanColorXyb-object), and [`LifxLanColorCSS`](#LifxLanColorCSS-object) object.
+  * The [`multiZoneSetColorZones()`](#LifxLanDevice-multiZoneSetColorZones-method) method did not accept a [`LifxLanColor`](#LifxLanColor-object) object for the `color` parameter even though this document says the method does. The method accepted only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object. Now the method accepts a [`LifxLanColor`](#LifxLanColor-object) object for the parameter. That is, the method accepts not only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object but also a [`LifxLanColorRGB`](#LifxLanColorRGB-object), [`LifxLanColorXyb`](#LifxLanColorXyb-object), and [`LifxLanColorCSS`](#LifxLanColorCSS-object) object. (thanks to [@paolotremadio](https://github.com/futomi/node-lifx-lan/issues/11))
 * v0.2.1 (2018-07-10)
   * Updated the `products.json`. (Thanks to [@danielHHHH](https://github.com/futomi/node-lifx-lan/issues/9))
 * v0.2.0 (2018-07-01)
