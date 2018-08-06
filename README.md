@@ -506,7 +506,7 @@ Property      | Type    | Required    | Description
 :-------------|:--------|:------------|:-----------
 `x`           | Float   | Conditional | X value in the range of 0.0 to 1.0.
 `y`           | Float   | Conditional | Y value in the range of 0.0 to 1.0.
-`brightnesse` | Float   | Conditional | Brightness in the range of 0.0 to 1.0.
+`brightness`  | Float   | Conditional | Brightness in the range of 0.0 to 1.0.
 `kelvin`      | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
 
 When the `LifxLanColorXyb` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.turnOffBroadcast()`](#LifxLan-turnOffBroadcast-method), and [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), the `x`, `y`, and `brightness` properties are required. If the `kelvin` property is not specified, it is set to `3500`.
@@ -1660,7 +1660,7 @@ Property | Type    | Requred  | Description
 `start`  | Integer | Required | Start index of zone (0 - 127).
 `end`    | Integer | Required | End index of zone (0 - 127).
 
-If the value of the `start` is grater than the `end` and this method fetches the information successfully, a hash object will be passed to the `resolve()` function. The hash object contains the properties as follows [[StateMultiZone - 506](https://lan.developer.lifx.com/docs/multizone-messages#section-statemultizone-506)]:
+If the value of the `start` is less than the `end` and this method fetches the information successfully, a hash object will be passed to the `resolve()` function. The hash object contains the properties as follows [[StateMultiZone - 506](https://lan.developer.lifx.com/docs/multizone-messages#section-statemultizone-506)]:
 
 Property | Type    | Description
 :--------|:--------|:-----------
@@ -1708,7 +1708,7 @@ The code above will output the result as follows:
 
 Note that the actual number of elements in the `colors` is 8.
 
-If the value of the `start` is equivalent to the `end` and this method fetches the information successfully, a hash object will be passed to the `resolve()` function. The hash object contains the properties as follows [[StateZone - 503](https://lan.developer.lifx.com/docs/multizone-messages#section-statezone-503]:
+If the value of the `start` is equivalent to the `end` and this method fetches the information successfully, a hash object will be passed to the `resolve()` function. The hash object contains the properties as follows [[StateZone - 503](https://lan.developer.lifx.com/docs/multizone-messages#section-statezone-503)]:
 
 Property | Type    | Description
 :--------|:--------|:-----------
@@ -1749,6 +1749,8 @@ The code above will output the result as follows:
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.2.2 (2018-08-07)
+  * The [`multiZoneSetColorZones()`](#LifxLanDevice-multiZoneSetColorZones-method) method did not accept a [`LifxLanColor`](#LifxLanColor-object) object for the `color` parameter even though this document says the method does. The method accepted only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object. Now the method accepts a [`LifxLanColor`](#LifxLanColor-object) object for the parameter. That is, the method accepts not only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object but also a [`LifxLanColorRGB`](#LifxLanColorRGB-object), [`LifxLanColorXyb`](#LifxLanColorXyb-object), and [`LifxLanColorCSS`](#LifxLanColorCSS-object) object.
 * v0.2.1 (2018-07-10)
   * Updated the `products.json`. (Thanks to [@danielHHHH](https://github.com/futomi/node-lifx-lan/issues/9))
 * v0.2.0 (2018-07-01)
