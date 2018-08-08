@@ -489,16 +489,19 @@ When the `LifxLanColorHSB` object is used for other methods, all properties are 
 
 ### <a id="LifxLanColorRGB-object">`LifxLanColorRGB` object</a>
 
-Property | Type    | Required    | Description
-:--------|:--------|:------------|:-----------
-`red`    | Float   | Conditional | Red component in the range of 0.0 to 1.0.
-`green`  | Float   | Conditional | Green component in the range of 0.0 to 1.0.
-`blue`   | Float   | Conditional | Blue component in the range of 0.0 to 1.0.
-`kelvin` | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
+Property     | Type    | Required    | Description
+:------------|:--------|:------------|:-----------
+`red`        | Float   | Conditional | Red component in the range of 0.0 to 1.0.
+`green`      | Float   | Conditional | Green component in the range of 0.0 to 1.0.
+`blue`       | Float   | Conditional | Blue component in the range of 0.0 to 1.0.
+`brightness` | Float   | Optional    | Brightness in the range of 0.0 to 1.0.
+`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
 
-When the `LifxLanColorRGB` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.turnOffBroadcast()`](#LifxLan-turnOffBroadcast-method), and [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), the `red`, `green`, and `blue` properties are required. If the `kelvin` property is not specified, it is set to `3500`.
+When the `LifxLanColorRGB` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), [`LifxLanDevice.turnOn()`](#LifxLanDevice-turnOn-method), and [`LifxLanDevice.setColor()`](#LifxLanDevice-setColor-method), the `red`, `green`, and `blue` properties are required. If the `kelvin` property is not specified, it is set to `3500`.
 
 When the `LifxLanColorRGB` object is used for other methods, all properties are optional.
+
+The specified RGB is converted to HSB internally. If the `brightness` is specified, The B component in the HSB is replaced by the value of the `brightness`.
 
 ### <a id="LifxLanColorXyb-object">`LifxLanColorXyb` object</a>
 
@@ -515,18 +518,21 @@ When the `LifxLanColorXyb` object is used for other methods, all properties are 
 
 ### <a id="LifxLanColorCSS-object">`LifxLanColorCSS` object</a>
 
-Property | Type    | Required    | Description
-:--------|:--------|:------------|:-----------
-`css`    | String  | Conditional | CSS color (`"red"`, `"#ff0000"`, or `"rgb(255, 0, 0)"`)
-`kelvin` | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
+Property     | Type    | Required    | Description
+:------------|:--------|:------------|:-----------
+`css`        | String  | Conditional | CSS color (`"red"`, `"#ff0000"`, or `"rgb(255, 0, 0)"`)
+`brightness` | Float   | Optional    | Brightness in the range of 0.0 to 1.0.
+`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
 
 The `css` property supports all of the named colors specified in the [W3C CSS Color Module Level 4](https://drafts.csswg.org/css-color/#named-colors), such as `"red"`, `"blue"`, `"blueviolet"`, etc.
 
 In addition to the named colors, the `css` property supports CSS Hexadecimal color (e.g., `"#ff0000"`) and RGB color (e.g., `"rgb(255, 0, 0)"`). Note that the `css` property does **not** support CSS RGBA color (e.g., `"rgba(255, 0, 0, 1.0)"`) and HSL color (e.g., `"hsl(0, 100%, 100%)"`) and HSLA color (e.g., `"hsl(0, 100%, 100%, 1.0)"`).
 
-When the `LifxLanColorCSS` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.turnOffBroadcast()`](#LifxLan-turnOffBroadcast-method), and [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), the `css` property is required. If the `kelvin` property is not specified, it is set to `3500`.
+When the `LifxLanColorCSS` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), [`LifxLanDevice.turnOn()`](#LifxLanDevice-turnOn-method), and [`LifxLanDevice.setColor()`](#LifxLanDevice-setColor-method), the `css` property is required. If the `kelvin` property is not specified, it is set to `3500`.
 
 When the `LifxLanColorCSS` object is used for other methods, the `css` property is optional.
+
+The specified CSS is converted to RGB, finally to HSB internally. If the `brightness` is specified, The B component in the HSB is replaced by the value of the `brightness`.
 
 ---------------------------------------
 ## <a id="LifxLanFilter-object">`LifxLanFilter` object</a>
@@ -1749,6 +1755,8 @@ The code above will output the result as follows:
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.3.0 (2018-08-08)
+  * Added the `brightness` parameter to the [`LifxLanColorCSS`](#LifxLanColorCSS-object) and [`LifxLanColorRGB`](#LifxLanColorRGB-object) object. (thanks to [@paolotremadio](https://github.com/futomi/node-lifx-lan/issues/11))
 * v0.2.2 (2018-08-07)
   * The [`multiZoneSetColorZones()`](#LifxLanDevice-multiZoneSetColorZones-method) method did not accept a [`LifxLanColor`](#LifxLanColor-object) object for the `color` parameter even though this document says the method does. The method accepted only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object. Now the method accepts a [`LifxLanColor`](#LifxLanColor-object) object for the parameter. That is, the method accepts not only a [`LifxLanColorHSB`](#LifxLanColorHSB-object) object but also a [`LifxLanColorRGB`](#LifxLanColorRGB-object), [`LifxLanColorXyb`](#LifxLanColorXyb-object), and [`LifxLanColorCSS`](#LifxLanColorCSS-object) object. (thanks to [@paolotremadio](https://github.com/futomi/node-lifx-lan/issues/11))
 * v0.2.1 (2018-07-10)
