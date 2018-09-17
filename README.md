@@ -479,7 +479,7 @@ Property     | Type    | Required    | Description
 `hue`        | Float   | Conditional | Hue in the range of 0.0 to 1.0.
 `saturation` | Float   | Conditional | Saturation in the range of 0.0 to 1.0.
 `brightness` | Float   | Conditional | Brightness in the range of 0.0 to 1.0.
-`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
+`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 1500 to 9000.
 
 When the `LifxLanColorHSB` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.turnOffBroadcast()`](#LifxLan-turnOffBroadcast-method), and [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), the `hue`, `saturation`, and `brightness` properties are required. If the `kelvin` property is not specified, it is set to `3500`.
 
@@ -495,7 +495,7 @@ Property     | Type    | Required    | Description
 `green`      | Float   | Conditional | Green component in the range of 0.0 to 1.0.
 `blue`       | Float   | Conditional | Blue component in the range of 0.0 to 1.0.
 `brightness` | Float   | Optional    | Brightness in the range of 0.0 to 1.0.
-`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
+`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 1500 to 9000.
 
 When the `LifxLanColorRGB` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), [`LifxLanDevice.turnOn()`](#LifxLanDevice-turnOn-method), and [`LifxLanDevice.setColor()`](#LifxLanDevice-setColor-method), the `red`, `green`, and `blue` properties are required. If the `kelvin` property is not specified, it is set to `3500`.
 
@@ -510,7 +510,7 @@ Property      | Type    | Required    | Description
 `x`           | Float   | Conditional | X value in the range of 0.0 to 1.0.
 `y`           | Float   | Conditional | Y value in the range of 0.0 to 1.0.
 `brightness`  | Float   | Conditional | Brightness in the range of 0.0 to 1.0.
-`kelvin`      | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
+`kelvin`      | Integer | Optional    | Color temperature (°) in the range of 1500 to 9000.
 
 When the `LifxLanColorXyb` object is used for the [`LifxLan.turnOnBroadcast()`](#LifxLan-turnOnBroadcast-method), [`LifxLan.turnOffBroadcast()`](#LifxLan-turnOffBroadcast-method), and [`LifxLan.setColorBroadcast()`](#LifxLan-setColorBroadcast-method), the `x`, `y`, and `brightness` properties are required. If the `kelvin` property is not specified, it is set to `3500`.
 
@@ -522,7 +522,7 @@ Property     | Type    | Required    | Description
 :------------|:--------|:------------|:-----------
 `css`        | String  | Conditional | CSS color (`"red"`, `"#ff0000"`, or `"rgb(255, 0, 0)"`)
 `brightness` | Float   | Optional    | Brightness in the range of 0.0 to 1.0.
-`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 2500 to 9000.
+`kelvin`     | Integer | Optional    | Color temperature (°) in the range of 1500 to 9000.
 
 The `css` property supports all of the named colors specified in the [W3C CSS Color Module Level 4](https://drafts.csswg.org/css-color/#named-colors), such as `"red"`, `"blue"`, `"blueviolet"`, etc.
 
@@ -825,7 +825,7 @@ Property       | Type    | Description
 +`hue`        | Float   | Hue in the range of 0.0 to 1.0.
 +`saturation` | Float   | Saturation in the range of 0.0 to 1.0.
 +`brightness` | Float   | Brightness in the range of 0.0 to 1.0.
-+`kelvin`     | Integer | Color temperature (°) in the range of 2500 to 9000.
++`kelvin`     | Integer | Color temperature (°) in the range of 1500 to 9000.
 `power`        | Integer | If the bulb is turned on, the value is `true`. Otherwise, the value is `false`.
 `label`        | String  | The label of the bulb.
 `infrared`     | Object  | If the bulb does not have infrared capability, the value is `null`.
@@ -836,7 +836,7 @@ Property       | Type    | Description
 ++`hue`       | Float   | Hue in the range of 0.0 to 1.0.
 ++`saturation`| Float   | Saturation in the range of 0.0 to 1.0.
 ++`brightness`| Float   | Brightness in the range of 0.0 to 1.0.
-++`kelvin`    | Integer | Color temperature (°) in the range of 2500 to 9000.
+++`kelvin`    | Integer | Color temperature (°) in the range of 1500 to 9000.
 
 The code below shows the state of the LIFX bulb:
 
