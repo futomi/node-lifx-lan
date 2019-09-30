@@ -74,8 +74,8 @@ $ npm install node-lifx-lan
   * [tileSetUserPosition() method](#LifxLanDevice-tileSetUserPosition-method)
   * [tileGetTileState64() method](#LifxLanDevice-tileGetTileState64-method)
   * [tileSetTileState64() method](#LifxLanDevice-tileSetTileState64-method)
-  * [tileGetTilesAndBounds() method](#LifxLanDevice-tileGetTilesAndBounds-method)
   * [tileGetTiles() method](#LifxLanDevice-tileGetTiles-method)
+  * [tileGetTilesAndBounds() method](#LifxLanDevice-tileGetTilesAndBounds-method)
 * [Release Note](#Release-Note)
 * [References](#References)
 * [License](#License)
@@ -630,6 +630,10 @@ Property      | Type    | Description
 ++`updated`    | `Date`  | A JavaScript `Date` object representing the date and time when the group was updated.
 +`multizone`   | Object  | If the bulb does not have multizone capability, the value is `null`.
 ++`count`      | Integer | Number of zone.
++`chain`       | Object  | If the bulb does not have chain capability, the value is `null`.
+++`start_index`  | Integer | Starting tile index.
+++`total_count`  | Integer | Total number of tiles from `start_index`.
+++`tile_devices` | Array   | A list of [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) objects.
 
 The code below discovers LIFX bulbs, then shows the structure of the  `deviceInfo` of one of the found bulbs:
 
@@ -669,7 +673,8 @@ The code above will output as follows:
   },
   "multizone": {
     "count": 16
-  }
+  },
+  "chain": null
 }
 ```
 
@@ -777,6 +782,10 @@ Property      | Type    | Description
 +`updated`   | `Date`  | A JavaScript `Date` object representing the date and time when the group was updated.
 `multizone`   | Object  | If the bulb does not have multizone capability, the value is `null`.
 +`count`     | Integer | Number of zone.
+`chain`         | Object  | If the bulb does not have chain capability, the value is `null`.
++`start_index`  | Integer | Starting tile index.
++`total_count`  | Integer | Total number of tiles from `start_index`.
++`tile_devices` | Array  | A list of [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) objects.
 
 
 ```JavaScript
@@ -1887,7 +1896,7 @@ If this method fetches the information successfully, an array of hash objects—
 
 Property      | Type    | Description
 :-------------|:--------|:-----------
-`tile_index`  | Integer | Tile index
+`tile_index`  | Integer | Tile chain index
 `x`           | Integer |
 `y`           | Integer |
 `width`       | Integer |
@@ -1991,9 +2000,132 @@ Lifx.discover().then((device_list) => {
 }).catch(console.error);
 ```
 
+### <a id="LifxLanDevice-tileGetTiles-method">tileGetTiles() method</a>
+
+The `tileGetTiles()` method wraps the [`tileGetDeviceChain()`](#LifxLanDevice-tileGetDeviceChain-method) method to return only the physically connected tiles in the device chain. This method returns a `Promise` object.
+
+If this method fetches the information successfully, an array of hash objects will be passed to the resolve() function. Each hash object is a [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) object with the following additional properties injected:
+
+Property       | Type    | Description
+:--------------|:--------|:-----------
+`tile_index`   | Integer | Tile chain index
+`left`         | Float   | Tile left x value (calculated via `user_x`)
+`right`        | Float   | Tile right x value (calculated via `user_x`)
+`top`          | Float   | Tile top y value (calculated via `user_y`)
+`bottom`       | Float   | Tile bottom y value (calculated via `user_y`)
+
+```JavaScript
+Lifx.discover().then((device_list) => {
+  let tileProductId = 55;
+  let firstTile = (dev) =>
+    dev.deviceInfo.productId === tileProductId
+  let dev = device_list.find(firstTile);
+  return dev.tileGetTiles();
+}).then((res) => {
+  console.log(JSON.stringify(res, null, '  '));
+}).catch((error) => {
+  console.error(error);
+});
+```
+
+The code above will output results as follows:
+
+```JavaScript
+[
+  {
+    "tile_index": 0,
+    "left": 4,
+    "right": 12,
+    "top": -4,
+    "bottom": 4,
+    "accel_meas_x": 152,
+    "accel_meas_y": -71,
+    "accel_meas_z": 2053,
+    "user_x": 0,
+    "user_y": 0,
+    "width": 8,
+    "height": 8,
+    "device_version_vendor": 1,
+    "device_version_product": 55,
+    "device_version_version": 10,
+    "firmware_build": "1548977726000000000n",
+    "firmware_version_minor": 50,
+    "firmware_version_major": 3
+  },
+  ...
+]
+```
+
+Note that the actual number of elements in the returned array equals however many are physically connected in the device chain.
+
 ### <a id="LifxLanDevice-tileGetTilesAndBounds-method">tileGetTilesAndBounds() method</a>
 
-### <a id="LifxLanDevice-tileGetTiles-method">tileGetTiles() method</a>
+The `tileGetTilesAndBounds()` method wraps the [`tileGetTiles()`](#LifxLanDevice-tileGetTiles-method) method to also return a spatial bounds object for all the physically connected tiles in the device chain. This method returns a `Promise` object.
+
+If this method fetches the information successfully, a hash object will be passed to the `resolve()` function. The hash object contains the properties as follows:
+
+Property  | Type    | Description
+:---------|:--------|:-----------
+`tiles`   | Array   | Array returned by the [`tileGetTiles()`](#LifxLanDevice-tileGetTiles-method) method
+`bounds`  | Object  |
++`left`   | Float   | Minimum `left` value for all tiles
++`right`  | Float   | Maximum `right` value for all tiles
++`top`    | Float   | Minimum `top` value for all tiles
++`bottom` | Float   | Maximum `bottom` values for all tiles
++`width`  | Float   | The `right` value minus the `left` value
++`width`  | Float   | The `bottom` value minus the `top` value
+
+```JavaScript
+Lifx.discover().then((device_list) => {
+  let tileProductId = 55;
+  let firstTile = (dev) =>
+    dev.deviceInfo.productId === tileProductId
+  let dev = device_list.find(firstTile);
+  return dev.tileGetTilesAndBounds();
+}).then((res) => {
+  console.log(JSON.stringify(res, null, '  '));
+}).catch((error) => {
+  console.error(error);
+});
+```
+
+```JavaScript
+{
+  "tiles": [
+    {
+      "tile_index": 0,
+      "left": 4,
+      "right": 12,
+      "top": -4,
+      "bottom": 4,
+      "accel_meas_x": 158,
+      "accel_meas_y": -96,
+      "accel_meas_z": 2065,
+      "user_x": 0,
+      "user_y": 0,
+      "width": 8,
+      "height": 8,
+      "device_version_vendor": 1,
+      "device_version_product": 55,
+      "device_version_version": 10,
+      "firmware_build": "1548977726000000000n",
+      "firmware_version_minor": 50,
+      "firmware_version_major": 3
+    },
+    ...
+  ],
+  "bounds": {
+    "left": -4,
+    "right": 12,
+    "top": -20,
+    "bottom": 4,
+    "width": 16,
+    "height": 24
+  }
+}
+```
+
+Note that the actual number of elements in the `tiles` array equals however many are physically connected in the device chain. 
 
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
