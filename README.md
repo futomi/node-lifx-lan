@@ -2130,6 +2130,8 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.4.0 (2019-10-08)
+  * Supported the [tile messages](https://lan.developer.lifx.com/docs/tile-messages) (thanks to [@furey](https://github.com/futomi/node-lifx-lan/pull/19))
 * v0.3.1 (2018-09-17)
   * The lower limit of the `kelvin` property in the `LifxLanColor` object was changed from 2500 to 1500. (thanks to [@nikteg](https://github.com/futomi/node-lifx-lan/pull/12))
 * v0.3.0 (2018-08-08)
