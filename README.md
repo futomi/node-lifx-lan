@@ -2160,8 +2160,8 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
-* v0.4.1 (2020-04-24)
-  * Added support for [multizone effects](https://lan.developer.lifx.com/docs/firmware-effects) (thanks to [@paddy2k])
+* v0.4.1 (2020-04-09)
+  * Added support for [multizone effects](https://lan.developer.lifx.com/docs/firmware-effects) (thanks to [@paddy2k](https://github.com/futomi/node-lifx-lan/pull/27))
 * v0.4.0 (2019-10-08)
   * Supported the [tile messages](https://lan.developer.lifx.com/docs/tile-messages) (thanks to [@furey](https://github.com/futomi/node-lifx-lan/pull/19))
 * v0.3.1 (2018-09-17)
