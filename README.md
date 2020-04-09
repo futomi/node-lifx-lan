@@ -70,6 +70,7 @@ $ npm install node-lifx-lan
   * [lightSetInfrared() method](#LifxLanDevice-lightSetInfrared-method)
   * [multiZoneSetColorZones() method](#LifxLanDevice-multiZoneSetColorZones-method)
   * [multiZoneGetColorZones() method](#LifxLanDevice-multiZoneGetColorZones-method)
+  * [multiZoneSetEffect() method](#LifxLanDevice-multiZoneSetEffect-method)
   * [tileGetDeviceChain() method](#LifxLanDevice-tileGetDeviceChain-method)
   * [tileSetUserPosition() method](#LifxLanDevice-tileSetUserPosition-method)
   * [tileGetTileState64() method](#LifxLanDevice-tileGetTileState64-method)
@@ -1780,6 +1781,35 @@ The code above will output the result as follows:
 }
 ```
 
+### <a id="LifxLanDevice-multiZoneSetEffect-method">multiZoneSetEffect(*params*) method</a>
+
+The `multiZoneSetEffect()` method sets the firmware effect to display on a multizone device [[SetMultiZoneEffect - 508](https://lan.developer.lifx.com/docs/firmware-effects#section-setmultizoneeffect-508)]. This method returns a `Promise` object.
+
+This method takes a hash object as an argument containing properties as follows:
+
+Property    | Type    | Requred  | Description
+:-----------|:--------|:---------|:-----------
+`type`      | Integer | Required | `0`: OFF, `1`: MOVE
+`speed`     | Integer | Required | Time in milliseconds for a complete animation cycle to occur
+`duration`  | Integer | Optional | Duration of effect in milliseconds. The default value is `0` a.k.a. infinite
+`direction` | Integer | Optional | `0`: TOWARDS, `1`: AWAY
+
+```JavaScript
+Lifx.discover().then((device_list) => {
+  let dev = device_list[0];
+  return dev.multiZoneSetEffect({
+    type      : 1,
+    speed     : 1000,
+    duration  : 0,
+    direction : 1
+  });
+}).then((res) => {
+  console.log('Done!');
+}).catch((error) => {
+  console.error(error);
+});
+```
+
 ### <a id="LifxLanDevice-tileGetDeviceChain-method">tileGetDeviceChain() method</a>
 
 The `tileGetDeviceChain()` method returns information about the tiles in the chain [[GetDeviceChain - 701](https://lan.developer.lifx.com/docs/tile-messages#section-getdevicechain-701)]. This method returns a `Promise` object.
@@ -2130,6 +2160,8 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.4.1 (2020-04-24)
+  * Added support for [multizone effects](https://lan.developer.lifx.com/docs/firmware-effects) (thanks to [@paddy2k])
 * v0.4.0 (2019-10-08)
   * Supported the [tile messages](https://lan.developer.lifx.com/docs/tile-messages) (thanks to [@furey](https://github.com/futomi/node-lifx-lan/pull/19))
 * v0.3.1 (2018-09-17)
