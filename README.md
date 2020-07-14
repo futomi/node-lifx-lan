@@ -1501,8 +1501,8 @@ Property     | Type    | Requred     | Description
 `color`      | [`LifxLanColorHSB`](#LifxLanColorHSB-object) | Required | HSB color information.
 `period`     | Integer | Required    | Duration of a cycle in milliseconds.
 `cycles`     | Float   | Required    | Number of cycles.
-`skew_ratio` | Float   | Conditional | `0.0` - `1.0`. Required only when the `waveform` is `4` (PLUSE).
-`waveform`   | Integer | Required    | `0`: SAW, `1`: SINE, `2`: HALF_SINE, `3`: TRIANGLE, `4`: PLUSE.
+`skew_ratio` | Float   | Conditional | `0.0` - `1.0`. Required only when the `waveform` is `4` (PULSE).
+`waveform`   | Integer | Required    | `0`: SAW, `1`: SINE, `2`: HALF_SINE, `3`: TRIANGLE, `4`: PULSE.
 
 Note that `hue`, `saturation`, `brightness`, and `kelvin` properties in the [`LifxLanColorHSB`](#LifxLanColorHSB-object) are all required in this method.
 
