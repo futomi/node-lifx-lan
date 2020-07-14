@@ -2160,6 +2160,9 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.4.2 (2020-07-15)
+  * Allowed no Params in TurnOffBroadcast. (thanks to [@sansnickel](https://github.com/futomi/node-lifx-lan/pull/26))
+  * Fixed typos in this document. (thanks to [@r1ch](https://github.com/futomi/node-lifx-lan/pull/28))
 * v0.4.1 (2020-04-09)
   * Added support for [multizone effects](https://lan.developer.lifx.com/docs/firmware-effects) (thanks to [@paddy2k](https://github.com/futomi/node-lifx-lan/pull/27))
 * v0.4.0 (2019-10-08)
@@ -2195,7 +2198,7 @@ Note that the actual number of elements in the `tiles` array equals however many
 
 The MIT License (MIT)
 
-Copyright (c) 2017 - 2018 Futomi Hatano
+Copyright (c) 2017 - 2020 Futomi Hatano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
