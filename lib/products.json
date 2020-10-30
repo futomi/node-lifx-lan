@@ -150,12 +150,7 @@
 					"color": true,
 					"chain": false,
 					"infrared": false,
-					"multizone": true,
-					"min_ext_mz_firmware": 1532997580,
-					"min_ext_mz_firmware_components": [
-						2,
-						77
-					]
+					"multizone": true
 				}
 			},
 			{
@@ -185,12 +180,7 @@
 					"color": true,
 					"chain": false,
 					"infrared": false,
-					"multizone": true,
-					"min_ext_mz_firmware": 1532997580,
-					"min_ext_mz_firmware_components": [
-						2,
-						77
-					]
+					"multizone": true
 				}
 			},
 			{
