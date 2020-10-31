@@ -5,72 +5,92 @@
 		"products": [
 			{
 				"pid": 1,
-				"name": "Original 1000",
+				"name": "LIFX Original 1000",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 3,
-				"name": "Color 650",
+				"name": "LIFX Color 650",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 10,
-				"name": "White 800 (Low Voltage)",
+				"name": "LIFX White 800 (Low Voltage)",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 11,
-				"name": "White 800 (High Voltage)",
+				"name": "LIFX White 800 (High Voltage)",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
+				}
+			},
+			{
+				"pid": 15,
+				"name": "LIFX Color 1000",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
 				}
 			},
 			{
 				"pid": 18,
-				"name": "White 900 BR30 (Low Voltage)",
+				"name": "LIFX White 900 BR30 (Low Voltage)",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
+				}
+			},
+			{
+				"pid": 19,
+				"name": "LIFX White 900 BR30 (High Voltage)",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
 				}
 			},
 			{
 				"pid": 20,
-				"name": "Color 1000 BR30",
+				"name": "LIFX Color 1000 BR30",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 22,
-				"name": "Color 1000",
+				"name": "LIFX Color 1000",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -78,9 +98,9 @@
 				"name": "LIFX A19",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -88,29 +108,29 @@
 				"name": "LIFX BR30",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 29,
-				"name": "LIFX+ A19",
+				"name": "LIFX A19 Night Vision",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": true,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 30,
-				"name": "LIFX+ BR30",
+				"name": "LIFX BR30 Night Vision",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": true,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -118,19 +138,19 @@
 				"name": "LIFX Z",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": true,
-					"chain": false
+					"multizone": true
 				}
 			},
 			{
 				"pid": 32,
-				"name": "LIFX Z 2",
+				"name": "LIFX Z",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": true,
-					"chain": false
+					"multizone": true
 				}
 			},
 			{
@@ -138,9 +158,9 @@
 				"name": "LIFX Downlight",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -148,9 +168,9 @@
 				"name": "LIFX Downlight",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -158,9 +178,29 @@
 				"name": "LIFX Beam",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": true,
-					"chain": false
+					"multizone": true
+				}
+			},
+			{
+				"pid": 39,
+				"name": "LIFX Downlight White To Warm",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 40,
+				"name": "LIFX Downlight",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
 				}
 			},
 			{
@@ -168,9 +208,9 @@
 				"name": "LIFX A19",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -178,49 +218,49 @@
 				"name": "LIFX BR30",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 45,
-				"name": "LIFX+ A19",
+				"name": "LIFX A19 Night Vision",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": true,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 46,
-				"name": "LIFX+ BR30",
+				"name": "LIFX BR30 Night Vision",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": true,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 49,
-				"name": "LIFX Mini",
+				"name": "LIFX Mini Color",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 50,
-				"name": "LIFX Mini Day and Dusk",
+				"name": "LIFX Mini White To Warm",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -228,9 +268,9 @@
 				"name": "LIFX Mini White",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -238,9 +278,19 @@
 				"name": "LIFX GU10",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
+				}
+			},
+			{
+				"pid": 53,
+				"name": "LIFX GU10",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
 				}
 			},
 			{
@@ -248,9 +298,19 @@
 				"name": "LIFX Tile",
 				"features": {
 					"color": true,
+					"chain": true,
 					"infrared": false,
-					"multizone": false,
-					"chain": true
+					"multizone": false
+				}
+			},
+			{
+				"pid": 57,
+				"name": "LIFX Candle",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
 				}
 			},
 			{
@@ -258,19 +318,19 @@
 				"name": "LIFX Mini Color",
 				"features": {
 					"color": true,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
 				"pid": 60,
-				"name": "LIFX Mini Day and Dusk",
+				"name": "LIFX Mini White To Warm",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
 				}
 			},
 			{
@@ -278,9 +338,275 @@
 				"name": "LIFX Mini White",
 				"features": {
 					"color": false,
+					"chain": false,
 					"infrared": false,
-					"multizone": false,
-					"chain": false
+					"multizone": false
+				}
+			},
+			{
+				"pid": 62,
+				"name": "LIFX A19",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 63,
+				"name": "LIFX BR30",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 64,
+				"name": "LIFX A19 Night Vision",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": true,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 65,
+				"name": "LIFX BR30 Night Vision",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": true,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 66,
+				"name": "LIFX Mini White",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 68,
+				"name": "LIFX Candle",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 70,
+				"name": "LIFX Switch",
+				"features": {
+					"color": false,
+					"relays": true,
+					"chain": false,
+					"buttons": true,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 81,
+				"name": "LIFX Candle White To Warm",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 82,
+				"name": "LIFX Filament Clear",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 85,
+				"name": "LIFX Filament Amber",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 87,
+				"name": "LIFX Mini White",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 88,
+				"name": "LIFX Mini White",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 89,
+				"name": "LIFX Switch",
+				"features": {
+					"color": false,
+					"relays": true,
+					"chain": false,
+					"buttons": true,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 90,
+				"name": "LIFX Clean",
+				"features": {
+					"hev": true,
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 91,
+				"name": "LIFX Color",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 92,
+				"name": "LIFX Color",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 94,
+				"name": "LIFX BR30",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 96,
+				"name": "LIFX Candle White To Warm",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 97,
+				"name": "LIFX A19",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 98,
+				"name": "LIFX BR30",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 99,
+				"name": "LIFX Clean",
+				"features": {
+					"hev": true,
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 100,
+				"name": "LIFX Filament Clear",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 101,
+				"name": "LIFX Filament Amber",
+				"features": {
+					"color": false,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 109,
+				"name": "LIFX A19 Night Vision",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": true,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 110,
+				"name": "LIFX BR30 Night Vision",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": true,
+					"multizone": false
+				}
+			},
+			{
+				"pid": 111,
+				"name": "LIFX A19 Night Vision",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": true,
+					"multizone": false
 				}
 			}
 		]
