@@ -2160,6 +2160,8 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.4.3 (2020-10-31)
+  * Updated the `products.json`. (Thanks to [@r1ch](https://github.com/futomi/node-lifx-lan/pull/31))
 * v0.4.2 (2020-07-15)
   * Allowed no Params in TurnOffBroadcast. (thanks to [@sansnickel](https://github.com/futomi/node-lifx-lan/pull/26))
   * Fixed typos in this document. (thanks to [@r1ch](https://github.com/futomi/node-lifx-lan/pull/28))
