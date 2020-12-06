@@ -5,7 +5,8 @@ The node-lifx-lan is a Node.js module which allows you to communicate with the W
 
 ## Dependencies
 
-* [Node.js](https://nodejs.org/en/) 6 +
+- [Node.js](https://nodejs.org/en/) 12 +
+  - Though the node-lifx-lan may work on older version of Node for now, it is strongly recommended to use Node 12 or newer. The node-lifx-lan will not support old versions of Node in the future.
 
 ## Installation
 
@@ -2160,6 +2161,9 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.5.0 (2020-12-06)
+  * Improved the stability of controlling bulbs. An UDP unicast packet will be sent up to 10 times. An UDP broadcast packet will be sent 3 times.
+  * From this version, this module works on Node v12 or later.
 * v0.4.3 (2020-10-31)
   * Updated the `products.json`. (Thanks to [@r1ch](https://github.com/futomi/node-lifx-lan/pull/31))
 * v0.4.2 (2020-07-15)
