@@ -173,6 +173,7 @@ This method takes a hash object containing the properties as follows:
 Property | Type    | Requred  | Description
 :--------|:--------|:---------|:-----------
 `wait`   | Integer | Optional | Wait time of the discovery process. The unit is millisecond. The default value is `3000`.
+`interfaces`   | Array | Optional | An array of network interfaces which should be broadcasted to scan bulbs.
 
 Basically you don't need to pass the `wait` property to this method. In most cases, the default value `3000` works well.
 
@@ -2156,7 +2157,7 @@ Lifx.discover().then((device_list) => {
 }
 ```
 
-Note that the actual number of elements in the `tiles` array equals however many are physically connected in the device chain. 
+Note that the actual number of elements in the `tiles` array equals however many are physically connected in the device chain.
 
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
