@@ -47,3 +47,8 @@ Temporary Items
 .apdisk
 
 test
+
+.idea
+**/logs
+*~
+*.iml
