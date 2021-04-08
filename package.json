@@ -1,6 +1,6 @@
 {
-  "name": "node-lifx-lan",
-  "version": "0.5.0",
+  "name": "@delos-tech/node-lifx-lan",
+  "version": "0.5.1",
   "description": "The node-lifx-lan is a Node.js module which allows you to communicate with the Wi-Fi LED smart light products \"LIFX\" using the LAN protocol.",
   "main": "./lib/lifx-lan.js",
   "files": [
@@ -10,7 +10,8 @@
     "lib": "./lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "license-check": "d2l-license-checker"
   },
   "keywords": [
     "LIFX",
@@ -24,8 +25,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/futomi/node-lifx-lan.git"
+    "url": "git@github.com:Delos-tech/node-lifx-lan.git"
   },
   "readmeFilename": "README.md",
-  "dependencies": {}
+  "devDependencies": {
+    "d2l-license-checker": "^3.2.0",
+    "pre-commit": "^1.2.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "pre-commit": [
+    "license-check"
+  ]
 }
