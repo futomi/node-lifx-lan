@@ -47,3 +47,11 @@ Temporary Items
 .apdisk
 
 test
+
+.idea
+**/logs
+*~
+*.iml
+
+node_modules/
+*~

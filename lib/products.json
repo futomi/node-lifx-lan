@@ -509,6 +509,16 @@
 				}
 			},
 			{
+				"pid": 93,
+				"name": "LIFX A19",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": false
+				}
+			},			
+			{
 				"pid": 94,
 				"name": "LIFX BR30",
 				"features": {
