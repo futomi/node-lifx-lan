@@ -608,6 +608,16 @@
 					"infrared": true,
 					"multizone": false
 				}
+			},
+			{
+				"pid": 118,
+				"name": "LIFX Z",
+				"features": {
+					"color": true,
+					"chain": false,
+					"infrared": false,
+					"multizone": true
+				}
 			}
 		]
 	}
