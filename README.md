@@ -72,6 +72,7 @@ $ npm install node-lifx-lan
   * [multiZoneSetColorZones() method](#LifxLanDevice-multiZoneSetColorZones-method)
   * [multiZoneGetColorZones() method](#LifxLanDevice-multiZoneGetColorZones-method)
   * [multiZoneSetEffect() method](#LifxLanDevice-multiZoneSetEffect-method)
+  * [multiZoneSetExtendedColorZones() method](#LifxLanDevice-multiZoneSetExtendedColorZones-method)
   * [tileGetDeviceChain() method](#LifxLanDevice-tileGetDeviceChain-method)
   * [tileSetUserPosition() method](#LifxLanDevice-tileSetUserPosition-method)
   * [tileGetTileState64() method](#LifxLanDevice-tileGetTileState64-method)
@@ -1811,7 +1812,7 @@ Lifx.discover().then((device_list) => {
 });
 ```
 
-### <a id="LifxLanDevice-multiZoneSetExtendedColorZones-method">multiZoneSetColorZones(*params*) method</a>
+### <a id="LifxLanDevice-multiZoneSetExtendedColorZones-method">multiZoneSetExtendedColorZones(*params*) method</a>
 
 The `multiZoneSetExtendedColorZones()` method changes the colors of multiple zones [[SetExtendedColorZones - 510](https://lan.developer.lifx.com/docs/changing-a-device#setextendedcolorzones---packet-510)]. This method returns a `Promise` object.
 
