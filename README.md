@@ -1811,6 +1811,56 @@ Lifx.discover().then((device_list) => {
 });
 ```
 
+### <a id="LifxLanDevice-multiZoneSetExtendedColorZones-method">multiZoneSetColorZones(*params*) method</a>
+
+The `multiZoneSetExtendedColorZones()` method changes the colors of multiple zones [[SetExtendedColorZones - 510](https://lan.developer.lifx.com/docs/changing-a-device#setextendedcolorzones---packet-510)]. This method returns a `Promise` object.
+
+This method takes a hash object as an argument containing properties as follows:
+
+Property   | Type    | Requred  | Description
+:----------|:--------|:---------|:-----------
+`zone_index` | Integer | Required | Start index of zone (0 - 127).
+`colors_count` | Integer | Required | The number of colors from the `colors` parameter to apply, (0 - 82).
+`colors`    | Array\[[`LifxLanColor`](#LifxLanColor-object)\] | Required | Colors of the zones.  If fewer than the `colors_count` are provided, the default color is off/black.
+`duration` | Integer | Optional | Color transition time in milliseconds. The default value is `0`.
+`apply`    | Integer | Optional | `0`: NO_APPLY, `1`: APPLY (default), `2`: APPLY_ONLY
+
+```JavaScript
+Lifx.discover().then((device_list) => {
+  let dev = device_list[0];
+  return dev.multiZoneSetExtendedColorZones({
+    zone_index   : 0,
+    colors_count : 7,
+    colors       : [
+      {
+        hue        : 0,
+        saturation : 1.0,
+        brightness : 1.0,
+        kelvin     : 3500
+      },
+      {
+        hue        : 0.33,
+        saturation : 1.0,
+        brightness : 1.0,
+        kelvin     : 3500
+      },
+      {
+        hue        : 0.66,
+        saturation : 1.0,
+        brightness : 1.0,
+        kelvin     : 3500
+      }
+    ],
+    duration     : 0,
+    apply        : 1
+  });
+}).then((res) => {
+  console.log('Done!');
+}).catch((error) => {
+  console.error(error);
+});
+```
+
 ### <a id="LifxLanDevice-tileGetDeviceChain-method">tileGetDeviceChain() method</a>
 
 The `tileGetDeviceChain()` method returns information about the tiles in the chain [[GetDeviceChain - 701](https://lan.developer.lifx.com/docs/tile-messages#section-getdevicechain-701)]. This method returns a `Promise` object.
@@ -2156,7 +2206,7 @@ Lifx.discover().then((device_list) => {
 }
 ```
 
-Note that the actual number of elements in the `tiles` array equals however many are physically connected in the device chain. 
+Note that the actual number of elements in the `tiles` array equals however many are physically connected in the device chain.
 
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
