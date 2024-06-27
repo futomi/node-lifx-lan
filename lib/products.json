@@ -509,6 +509,21 @@
 				}
 			},
 			{
+				"pid": 93,
+				"name": "LIFX A19 US",
+				"features": {
+				  "color": true,
+				  "chain": false,
+				  "matrix": false,
+				  "infrared": false,
+				  "multizone": false,
+				  "temperature_range": [
+					1500,
+					9000
+				  ]
+				}
+			},
+			{
 				"pid": 94,
 				"name": "LIFX BR30",
 				"features": {
