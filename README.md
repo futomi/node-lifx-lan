@@ -2161,6 +2161,8 @@ Note that the actual number of elements in the `tiles` array equals however many
 ---------------------------------------
 ## <a id="Release-Note">Release Note</a>
 
+* v0.5.1 (2024-06-27)
+  * Updated the `products.json`. (Thanks to [@AlexisAnzieu](https://github.com/futomi/node-lifx-lan/pull/44))
 * v0.5.0 (2020-12-06)
   * Improved the stability of controlling bulbs. An UDP unicast packet will be sent up to 10 times. An UDP broadcast packet will be sent 3 times.
   * From this version, this module works on Node v12 or later.
@@ -2204,7 +2206,7 @@ Note that the actual number of elements in the `tiles` array equals however many
 
 The MIT License (MIT)
 
-Copyright (c) 2017 - 2020 Futomi Hatano
+Copyright (c) 2017 - 2024 Futomi Hatano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
