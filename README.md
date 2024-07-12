@@ -635,7 +635,7 @@ Property      | Type    | Description
 +`chain`       | Object  | If the bulb does not have chain capability, the value is `null`.
 ++`start_index`  | Integer | Starting tile index.
 ++`total_count`  | Integer | Total number of tiles from `start_index`.
-++`tile_devices` | Array   | A list of [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) objects.
+++`tile_devices` | Array   | A list of [Tile](https://lan.developer.lifx.com/docs/field-types#tile) objects.
 
 The code below discovers LIFX bulbs, then shows the structure of the  `deviceInfo` of one of the found bulbs:
 
@@ -787,7 +787,7 @@ Property      | Type    | Description
 `chain`         | Object  | If the bulb does not have chain capability, the value is `null`.
 +`start_index`  | Integer | Starting tile index.
 +`total_count`  | Integer | Total number of tiles from `start_index`.
-+`tile_devices` | Array  | A list of [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) objects.
++`tile_devices` | Array  | A list of [Tile](https://lan.developer.lifx.com/docs/field-types#tile) objects.
 
 
 ```JavaScript
@@ -1820,7 +1820,7 @@ If this method fetches the information successfully, a hash object will be passe
 Property       | Type    | Description
 :--------------|:--------|:-----------
 `start_index`  | Integer | Starting tile index
-`tile_devices` | Array   | A list of [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) objects
+`tile_devices` | Array   | A list of [Tile](https://lan.developer.lifx.com/docs/field-types#tile) objects
 `total_count`  | Integer | Total number of tiles from `start_index`
 
 ```JavaScript
@@ -2035,7 +2035,7 @@ Lifx.discover().then((device_list) => {
 
 The `tileGetTiles()` method wraps the [`tileGetDeviceChain()`](#LifxLanDevice-tileGetDeviceChain-method) method to return only the physically connected tiles in the device chain. This method returns a `Promise` object.
 
-If this method fetches the information successfully, an array of hash objects will be passed to the resolve() function. Each hash object is a [Tile](https://lan.developer.lifx.com/docs/tile-messages#section-tile) object with the following additional properties injected:
+If this method fetches the information successfully, an array of hash objects will be passed to the resolve() function. Each hash object is a [Tile](https://lan.developer.lifx.com/docs/field-types#tile) object with the following additional properties injected:
 
 Property       | Type    | Description
 :--------------|:--------|:-----------
